@@ -20,12 +20,28 @@ public class CardDisplay : MonoBehaviour {
 	void Start () {
 		nameText.text = card.name;
 		descriptionText.text = card.description;
-
 		artworkImage.sprite = card.artwork;
-
 		manaText.text = card.manaCost.ToString();
 		attackText.text = card.attack.ToString();
 		healthText.text = card.health.ToString();
 	}
+
+	 // Call this method to update the card display
+    public void UpdateCardDisplay()
+    {
+        if (card != null)
+        {
+            nameText.text = card.name;
+            descriptionText.text = card.description;
+            artworkImage.sprite = card.artwork;
+            manaText.text = card.manaCost.ToString();
+            attackText.text = card.attack.ToString();
+            healthText.text = card.health.ToString();
+        }
+        else
+        {
+            Debug.LogWarning("Card is not assigned!");
+        }
+    }
 	
 }
